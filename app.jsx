@@ -1,20 +1,20 @@
-class Passenger{
-	constructor (nombre,apellido,dni,asiento) {
-  this.nombre = nombre;
-	this.apellido= apellido;
-	this.dni = dni;
-  this.asiento =asiento;
 
+
+class Passenger{
+	constructor (nombre,apellido,dni, nPasaje) {
+  this.name = nombre;
+	this.last_name= apellido;
+	this.dni = dni;
+  this.num = nPasaje; 
+    
   }
 }
 let asientos = new Array(10);
 
-asientos[8] = new Passenger ("Evelyn","Guevara Alanya",48355993,8);
-asientos[10] = new Passenger ("Sofia","Rejas",50985023,10);
-asientos[12] = new Passenger ("Mirian","Martinez",80956932,12);
-asientos[1] = new Passenger ("Jose","Caceres",8095693,1);
-asientos[6] = new Passenger ("Maria","Rivera",85462583,6);
-
+asientos[2] = new Passenger ("Haidy","Dueñas",47797236,3);
+asientos[1] = new Passenger ("Anni","Dueñas",72797236,2);
+asientos[4] = new Passenger ("Gary","Dueñas",34457236,5);
+asientos[6] = new Passenger ("Panchito","Dueñas",54465676,4);
 const App = ({title, seats}) => {
    return (
     <div class="container-fluid">
@@ -90,9 +90,9 @@ function imprimirLista(){
     asientos.map((item,index)=>{
       return (
         <div className="col-lg-12">
-          <p>{item.nombre} {item.apellido}</p>
+          <p>{item.name} {item.last_name}</p>
           <p>{item.dni}</p>
-          <p>{item.asiento}</p>
+          <p>{item.num}</p>
         </div>
       )
     })
@@ -105,7 +105,8 @@ let seats = [
    [2, 6, 10, 14, 18, 22, 26, 30],
    [1, 5, 9, 13, 17, 21, 25, 29]
 ]
-ReactDOM.render (
-   <App title = {'Hola Mundo!'}  seats = {seats} />,
+ReactDOM.render ( 
+   <App title = {'Hola Mundo!'}  seats = {seats} />, 
    document.getElementById("root")
-);
+); 
+ 
